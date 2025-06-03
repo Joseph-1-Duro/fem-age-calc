@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Age calculator</title>
+  </head>
+
+  <body>
+    <main class="main-container">
+      <section class="calc-container">
+        <form class="custom-form">
+          <div class="input-group">
+            <div class="label-group">
+              <label class="label" for="day-input">Day</label>
+              <input
+                placeholder="DD"
+                class="input"
+                id="day-input"
+                type="number"
+              />
+
+              <small class="day-error"></small>
+            </div>
+
+            <div class="label-group">
+              <label class="label" for="month-input">Month</label>
+              <input
+                placeholder="MM"
+                inputmode="numeric"
+                class="input"
+                id="month-input"
+                type="number"
+              />
+
+              <small class="month-error"></small>
+            </div>
+
+            <div class="label-group">
+              <label class="label" for="year-input">Year</label>
+              
+              <input
+              placeholder="YY"
+              inputmode="numeric"
+              class="input"
+              id="year-input"
+              type="number"
+              />
+              <small class="year-error"></small>
+            </div>
+          </div>
+
+          <div class="submit-area">
+            <button type="submit">
+              <img src="./assets/images/icon-arrow.svg" alt="" />
+            </button>
+          </div>
+        </form>
+
+        <div class="display-area">
+          <h2><span id="years-el">--</span>years</h2>
+          <h2><span id="months-el">--</span>months</h2>
+          <h2><span id="days-el">--</span>days</h2>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

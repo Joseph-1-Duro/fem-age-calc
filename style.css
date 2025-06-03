@@ -1,0 +1,197 @@
+:root {
+  /* primary */
+  --purple-500: hsl(259, 100%, 65%);
+  --red-400: hsl(0, 100%, 67%);
+
+  /* neutral */
+  --white: hsl(0, 100%, 100%);
+  --grey-100: hsl(0, 0%, 94%);
+  --grey-200: hsl(0, 0%, 86%);
+  --grey-500: hsl(0, 1%, 44%);
+  --black: hsl(0, 0%, 0%);
+
+  --fs-input: 2rem;
+}
+
+html {
+  /* Set base font size to 100% for accessibility and consistent scaling */
+  font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* TODO add this to my design system */
+/* Hide number input spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input,
+button {
+  font: inherit;
+  outline: transparent;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+}
+
+h2 {
+  line-height: 1.1;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--grey-100);
+}
+
+.main-container {
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  padding-inline: 1rem;
+}
+
+.calc-container {
+  background-color: var(--white);
+  padding-block: 2rem 3.75rem;
+  padding-inline: 2rem;
+  border-radius: 1rem;
+  border-bottom-right-radius: 8rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.label {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--grey-500);
+}
+.label.error {
+  color: var(--red-400);
+}
+
+.input {
+  width: 80px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--grey-200);
+  font-weight: 700;
+  transition: border 300ms linear;
+  color: var(--black);
+}
+.input.error {
+  border-color: var(--red-400);
+}
+
+.input:focus {
+  border-color: var(--purple-500);
+}
+
+[class$="-error"] {
+  display: block;
+  width: fit-content;
+  margin-top: 4px;
+  color: var(--red-400);
+  font-size: 0.7rem;
+}
+
+.submit-area {
+  position: relative;
+  padding-block: 1.5rem;
+}
+
+.submit-area::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  width: 100%;
+  background-color: var(--grey-200);
+  z-index: 0;
+}
+
+.submit-area button {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background-color: var(--purple-500);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  width: 64px;
+  height: 64px;
+  padding: 1rem;
+  transition: background-color 300ms linear;
+}
+
+.submit-area button:hover {
+  background-color: var(--black);
+}
+
+h2 {
+  font-size: clamp(2.5rem, 0.625rem + 6vw, 4rem);
+  font-style: italic;
+  color: var(--black);
+}
+
+h2 span {
+  color: var(--purple-500);
+  margin-right: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .submit-area button {
+    left: 100%;
+  }
+
+  .calc-container {
+    min-width: 600px;
+  }
+
+  .input-group {
+    width: 80%;
+  }
+
+  .input {
+    width: 110px;
+  }
+
+  .submit-area {
+    width: 90%;
+  }
+
+  .submit-area button {
+    width: 72px;
+    height: 72px;
+  }
+}
