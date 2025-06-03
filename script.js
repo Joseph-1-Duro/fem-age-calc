@@ -65,6 +65,16 @@ function validateInputs() {
     isValid = false
   }
 
+  if (yearInput.value > currentYear) {
+    yearInput.classList.add('error')
+
+    yearInput.parentElement.querySelector('label').classList.add('error')
+
+    yearInput.parentElement.querySelector('small').innerHTML = "Please be real"
+
+    isValid = false
+  }
+
   if (!dayInput.value || !monthInput.value || !yearInput.value) {
     inputs.forEach((input) => {
       const parent = input.parentElement;
